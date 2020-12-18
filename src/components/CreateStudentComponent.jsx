@@ -68,7 +68,7 @@ export default class CreateStudentComponent extends Component {
                                    value={this.state.stuLastName} onChange={this.changestuLastNameHandler}/>
                                </div>
                                <div className = "form-group">
-                                   <label>Class Room Student Expass:</label>
+                                   <label>Class Room Student Expass1:</label>
                                    <input placeholder="Class Name" name="classRoom" className="form-control"
                                    value={this.state.classRoom} onChange={this.changeclassRoomHandler}/>
                                </div>
