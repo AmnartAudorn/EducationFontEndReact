@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React, { Component } from 'react'
 import EnrolmentService from '../service/EnrolmentService'
 
@@ -10,19 +10,24 @@ class GetEnrolmentByStudentIdComponent extends Component {
            enrolment:[]
         }
     }
+    
     componentDidMount(){
         EnrolmentService.getEnrolmentStudent2().then((res) => {
             this.setState({ enrolment: res.data});
         });
     }
     
-   
+
+    getEnrolmentExcel(){
+        this.props.history.push('/enrolmentStudent');  
+    }
+
     render() {
         
         return (
             <div>
                 <h2 className="text-center">Enrolment List</h2>
-                
+               
                 <div className = "row">
                     <table className = "table table-striped table-bordered">
                         <thead>

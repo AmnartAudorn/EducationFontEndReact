@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import SubjectService from '../service/SubjectService';
 
 
+
 export default class ListSubjecComponent extends Component {
+
+    
     constructor(props){
         super(props)
 
@@ -25,6 +28,7 @@ export default class ListSubjecComponent extends Component {
 
     render() {
         return (
+            
             <div>
                 <h2 className="text-center">Teacher List</h2>
                 <div className = "row">
@@ -41,11 +45,12 @@ export default class ListSubjecComponent extends Component {
                                 <th>Start Time</th>
                                 <th>End Time</th>
                                 <th>Teacher Name</th>
-                               
                             </tr>
                         </thead>
                         <tbody>
+                            
                             {
+                                
                                 this.state.subjec.map(
                                     subjec =>
                                     <tr key = {subjec.subj_id}>

@@ -33,7 +33,7 @@ export default class CreateSubjectComponent extends Component {
         let subject = {subj_id:this.state.subj_id,subj_name:this.state.subj_name,subj_details:this.state.subj_details,subj_credit:this.state.subj_credit,start_time:this.state.start_time,end_time:this.state.end_time};
         console.log('subject => ' + JSON.stringify(subject));
        
-        let teacher = {tid:this.state.tid};
+       
         console.log('teacher => ' + JSON.stringify(this.state.tid));
         
 

@@ -33,6 +33,17 @@ export default class ListEnrolmentComponent extends Component {
         });
   
     }
+    getEnrolmentExcel(subjId){
+       
+        let getEnrolment = {
+            subj_id: subjId
+        }
+        
+        EnrolmentService.getEnrolmentExcel(getEnrolment).then(res =>{
+            this.props.history.push('/enrolment');
+        });
+  
+    }
    
     render() {
         return (
@@ -40,7 +51,6 @@ export default class ListEnrolmentComponent extends Component {
                 <h2 className="text-center">Enrolment List</h2>
                 <div className = "row">
                     <button className ="btn btn-primary" onClick={this.addEnrolment}>Add Enrolment</button>
-                
                 </div>
                 
                 <div className = "row">
@@ -52,6 +62,8 @@ export default class ListEnrolmentComponent extends Component {
                                 <th>LastName Teacher</th>
                                 <th>Subject Name</th>
                                 <th>Details Subject</th>
+                                <th>Excel</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -64,7 +76,10 @@ export default class ListEnrolmentComponent extends Component {
                                         <td>{enrolment.subject.teacher.tfirst_name}</td>
                                         <td>{enrolment.subject.teacher.tlast_name}</td>
                                         <td>{enrolment.subject.subj_name}</td>
+                                        
                                         <td><button onClick={e => this.getEnrolmentByStudentId(enrolment.subject.subj_id)} className="btn btn-outline-success my-2 my-sm-0">View Enrolment</button></td>
+                                        <td><button onClick={e => this.getEnrolmentExcel(enrolment.subject.subj_id)} className="btn btn-outline-success my-2 my-sm-0">Export to Excel</button></td>
+                                    
                                     </tr>
                                    
                                     

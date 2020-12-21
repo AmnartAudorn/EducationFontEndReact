@@ -72,7 +72,7 @@ export default class CreateStudentComponent extends Component {
                                    <input placeholder="Class Name" name="classRoom" className="form-control"
                                    value={this.state.classRoom} onChange={this.changeclassRoomHandler}/>
                                </div>
-
+                              
                                <button className="btn btn-success" onClick={this.saveStudent}>Save Student</button>
                                <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft : "10px"}}>cancle</button>
                            </form>
